@@ -1,19 +1,53 @@
-# Node
-node_modules/
-.env
-.env.*
-npm-debug.log*
+# Autovideo Web
 
-# Python
-__pycache__/
-*.pyc
-.venv/
-venv/
+Phiên bản này chạy hoàn toàn ở phía trình duyệt (HTML + CSS + JavaScript) và không cần server Python hay FFmpeg trong backend.
 
-# Project data
-autovideo_data/
-!autovideo_data/.gitkeep
+## Chạy ứng dụng
 
-# OS
-.DS_Store
-Thumbs.db
+### Cách 1: mở trực tiếp file HTML
+
+Bạn có thể mở file sau trong trình duyệt:
+
+```text
+public/index.html
+```
+
+### Cách 2: chạy local web server
+
+```bash
+node server.js
+```
+
+Sau đó mở:
+
+```text
+http://localhost:3000
+```
+
+## Tính năng
+
+- Nhập kịch bản theo từng cảnh
+- Upload nhiều ảnh và tạo video tự động
+- Chọn màu nền trên/dưới
+- Tạo video dọc 9:16 trong trình duyệt
+- Download file video webm
+
+## Ghi chú
+
+- Đây là phiên bản web tĩnh, chạy hoàn toàn ở client-side.
+- Video được tạo bằng Canvas + MediaRecorder, nên file đầu ra là dạng WebM.
+- Nếu bạn muốn file MP4 thuần, cần dùng FFmpeg hoặc backend server để render lại từ WebM sang MP4.
+
+## Cấu trúc
+
+```text
+.
+├─ public/
+│  ├─ index.html
+│  ├─ styles.css
+│  └─ app.js
+├─ server.js
+├─ package.json
+├─ README.md
+└─ .gitignore
+```

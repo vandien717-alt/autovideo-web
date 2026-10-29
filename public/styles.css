@@ -3,46 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autovideo Studio</title>
+    <title>Autovideo Web</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="page-shell">
+    <div class="app-shell">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Video Automation Studio</p>
+          <p class="eyebrow">STATIC WEB APP</p>
           <h1>Autovideo</h1>
-        </div>
-        <div class="topbar-actions">
-          <span class="status-pill" id="apiHealth">Checking...</span>
         </div>
       </header>
 
       <main class="layout">
-        <section class="panel form-panel">
-          <h2>Tạo video mới</h2>
+        <section class="panel">
+          <h2>Tạo video 9:16</h2>
 
           <div class="field-group">
-            <label for="jobName">Tên dự án</label>
-            <input id="jobName" type="text" placeholder="ví dụ: chao-mung-dan-cu" />
+            <label for="projectName">Tên dự án</label>
+            <input id="projectName" type="text" placeholder="ví dụ: chao-mung-cu-dan" />
           </div>
 
           <div class="field-group">
             <label for="scriptText">Kịch bản</label>
-            <textarea id="scriptText" rows="10" placeholder="Mỗi đoạn trống = một cảnh. Ví dụ:\n\nXin chào!\n\nChúng ta cùng xem hành trình mới của khu dân cư."></textarea>
+            <textarea id="scriptText" rows="10" placeholder="Mỗi đoạn trống = một cảnh. Ví dụ:
+
+Chào mừng bạn đến với khu dân cư mới.
+
+Mọi thứ đã sẵn sàng cho ngày đầu tiên."></textarea>
           </div>
 
           <div class="field-group">
             <label for="images">Ảnh nền / hình minh họa</label>
             <input id="images" type="file" accept=".jpg,.jpeg,.png,.webp,.bmp" multiple />
-          </div>
-
-          <div class="field-group">
-            <label for="music">Nhạc nền (tùy chọn)</label>
-            <input id="music" type="file" accept=".mp3,.wav,.m4a" />
           </div>
 
           <div class="two-col">
@@ -56,34 +52,15 @@
             </div>
           </div>
 
-          <div class="two-col">
-            <div class="field-group compact">
-              <label for="voice">Giọng đọc</label>
-              <input id="voice" type="text" value="vi-VN-HoaiMyNeural" />
-            </div>
-            <div class="field-group compact">
-              <label for="rate">Tốc độ</label>
-              <input id="rate" type="text" value="+0%" />
-            </div>
-          </div>
-
-          <button id="buildBtn" class="primary-btn">Tạo video</button>
+          <button id="generateBtn" class="primary-btn">Tạo video</button>
+          <button id="downloadBtn" class="secondary-btn" type="button" hidden>Download video</button>
           <div id="status" class="status-box" aria-live="polite"></div>
         </section>
 
         <section class="panel preview-panel">
-          <div class="panel-header">
-            <h2>Video mới nhất</h2>
-          </div>
-          <div id="videoPreview" class="video-preview empty">
+          <h2>Xem trước</h2>
+          <div id="videoBox" class="video-box empty">
             Chưa có video nào.
-          </div>
-
-          <div class="jobs-panel">
-            <div class="panel-header small-gap">
-              <h3>Danh sách video</h3>
-            </div>
-            <div id="jobList" class="job-list"></div>
           </div>
         </section>
       </main>
