@@ -1,0 +1,19 @@
+# Node
+node_modules/
+.env
+.env.*
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Project data
+autovideo_data/
+!autovideo_data/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db

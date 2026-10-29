@@ -1,0 +1,98 @@
+# Autovideo Web
+
+Một ứng dụng web giúp bạn tạo video dọc 9:16 tự động từ kịch bản và hình ảnh bằng Python + FFmpeg.
+
+## Tính năng
+
+- Nhập kịch bản cho từng cảnh
+- Upload nhiều ảnh cùng lúc
+- Tùy chọn thêm nhạc nền
+- Chọn màu nền và giọng đọc
+- Tự động render video MP4 9:16
+- Xem danh sách video đã tạo
+- Download video trực tiếp
+
+## Công nghệ
+
+- Node.js + Express
+- Multer cho upload file
+- Python 3
+- FFmpeg
+- Pillow
+- edge-tts
+
+## Cài đặt
+
+### 1. Cài đặt Node.js
+
+Tải và cài đặt Node.js từ: https://nodejs.org/
+
+### 2. Cài đặt Python và FFmpeg
+
+- Python 3.10+
+- FFmpeg phải có sẵn trong PATH
+
+### 3. Cài đặt các gói Node
+
+```bash
+npm install
+```
+
+### 4. Cài đặt các gói Python
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate   # hoặc .venv\Scripts\activate trên Windows
+pip install Pillow edge-tts
+```
+
+### 5. Chạy ứng dụng
+
+```bash
+npm start
+```
+
+Mở trình duyệt tại:
+
+```text
+http://localhost:3000
+```
+
+## Cấu trúc thư mục
+
+```text
+autovideo-web/
+├─ autovideo.py
+├─ server.js
+├─ package.json
+├─ public/
+│  ├─ index.html
+│  ├─ styles.css
+│  └─ app.js
+├─ autovideo_data/
+│  ├─ inbox/
+│  ├─ outbox/
+│  ├─ done/
+│  └─ failed/
+├─ README.md
+├─ .gitignore
+└─ requirements.txt
+```
+
+## Ví dụ nâng cao
+
+Bạn có thể upload nhiều ảnh, đặt kịch bản theo từng cảnh, rồi chọn nhạc nền và giọng điệu. Video kết quả sẽ được lưu ở:
+
+```text
+autovideo_data/outbox/
+```
+
+## Lưu ý
+
+- Nếu máy bạn chưa cài FFmpeg, hãy cài trước.
+- Nếu không tạo được giọng đọc, hệ thống sẽ tạo video silent fallback.
+- Nếu không cài font tiếng Việt, hãy chỉ định `--font` hoặc đặt font vào hệ thống.
+
+## License
+
+MIT
